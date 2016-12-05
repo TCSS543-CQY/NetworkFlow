@@ -27,34 +27,40 @@ public class tcss543 {
 	/**
 	 * load graphs from txt files
 	 * @param args
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		  SimpleGraph simpleG;
           simpleG= new SimpleGraph();
-          GraphInput.LoadSimpleGraph(simpleG, args[0]);
-          System.out.print(runAlgorithms(simpleG));
+          if (args.length>0){
+        	  GraphInput.LoadSimpleGraph(simpleG, args[0]);
+        	  System.out.print(runAlgorithms(simpleG));
+          }
+          else{
+        	  throw new IOException("please input a text file");
+          }
           
           
 	}
 	
 	
 	/**
-	 * run three algorithms on each type of graphs 50 times, and record running time
+	 * run three algorithms on each type of graphs 10 times, and record running time
 	 * @return
 	 */
 	public static String runAlgorithms (SimpleGraph g){
 			
-		  	long[] runtimeArray = new long[50];
+		  	long[] runtimeArray = new long[10];
 	        long startTime = 0;
 	        String results = null;
-	        System.out.println("result for running all algorithem 50 times given an input file: ");
+	        System.out.println("result for running all algorithem 10 times given an input file: ");
 	        System.out.println("\n");
 	        System.out.println("------------------------------------");
 	        
 	        //Ford-Fulkerson
 	    	double FFMaxflow = 0;
-	        for(int i = 0;i<5;i++){ 
+	        for(int i = 0;i<10;i++){ 
 	        	startTime = System.currentTimeMillis();
 	        	FFMaxflow = FordFulkerson.FordFulkerson(g);
 	        	runtimeArray[i] = System.currentTimeMillis() - startTime;
@@ -68,7 +74,7 @@ public class tcss543 {
 	        
 	        //Run Preflow Push
 	        double preFlowMaxflow = 0;
-	        for(int i = 0;i<5;i++){   
+	        for(int i = 0;i<10;i++){   
 //	        	System.out.println(i+"th time for preFlow push");
 	        	startTime = System.currentTimeMillis();
 	        	preFlowMaxflow = PreflowPush.PreflowPush(g);
@@ -85,7 +91,7 @@ public class tcss543 {
 
 	        //Run scaling Ford-Fulkerson
 	        double SFFMaxflow = 0.0;
-	        for(int i = 0;i<5;i++){      	
+	        for(int i = 0;i<10;i++){      	
 	        	startTime = System.currentTimeMillis();
 	        	SFFMaxflow = ScalingFordFulkerson.ScalingFordFulkerson(g);
 	        	runtimeArray[i] = System.currentTimeMillis() - startTime;
@@ -105,9 +111,11 @@ public class tcss543 {
 			}
 		
 		return results;
-		
-		
+			
 		
 	}
+	
+	
+
 
 }
