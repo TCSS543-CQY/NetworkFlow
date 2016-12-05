@@ -4,7 +4,8 @@ import graph.GraphInput;
 import graph.SimpleGraph;
 
 /**
- * generate mesh graph, random graph, bipartite graph
+ * For each graph type, generate a range of graphs with different vertices count,
+ * degrees, and probablities. 
  * @author yanan, weijia chen, zijun qu
  * @version Dec, 2016
  *

@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  * 
- * @author yanan
+ * @author yanan, weijia chen, zijun qu
  *
  */
 public class RandomGraph {
