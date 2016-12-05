@@ -22,6 +22,9 @@ public class ResidualGraph {
     public Iterator edges() {
         return edgeList.iterator();
     }
+    public Iterator outgoingEdges(ResidualVertex vertex) {
+        return vertex.outgoingEdge.Iterator();
+    }
 
 
 }

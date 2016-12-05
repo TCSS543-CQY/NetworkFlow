@@ -15,12 +15,11 @@ import java.util.Queue;
 public class FordFulkerson {
 		private int[] parent;
 		private Queue<Integer> queue;
-		private int numberOfVertices;
+		public static ResidualGraph gResidual;
 		private boolean[] visited;
-
-		public FordFulkerson(int numberOfVertices)
+		public FordFulkerson(SimpleGraph sGraph)
 		{
-			this.numberOfVertices = numberOfVertices;
+			gResidual = new ResidualGraph();
 			this.queue = new LinkedList<Integer>();
 			parent = new int[numberOfVertices + 1];
 			visited = new boolean[numberOfVertices + 1];
