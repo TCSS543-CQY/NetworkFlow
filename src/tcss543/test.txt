@@ -1,0 +1,6 @@
+	s	a	6
+	s	b	2
+	a	d	1
+	b	d	7
+	c	t	5
+	d	t 	2

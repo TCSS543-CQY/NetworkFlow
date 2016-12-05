@@ -1,128 +1,109 @@
 package graphGenerate;
 
-//Zane,Yogi,Nick,Jodie
-//TCSS 543
-//Nov. 21, 08
-
-import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
-import java.util.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Random;
 
+
+/**
+ * 
+ * @author yanan
+ *
+ */
 public class RandomGraph {
-	
-	private static final String NL = "\n";
-	
-	/**
-	 * Entrance point for the program.
-	 * java RandomGraph v, e, m, f
-	 * @param v - the number of vertices
-	 * @param e - the number of edges leaving each node
-	 * @param min - the lower bound on the edge capacities
-	 * @param max - the upper bound on the edge capacities
-	 * @param f - path and file name for saving the graph
-	 */
-	public static void main(String[] args){
-		if(args.length != 5){
-			System.out.println("\nInvalid parameters!");
-			System.out.println("Usage:");
-			System.out.println("java RandomGraph v, e, min, max, f");
-			System.out.println("v - the number of vertices in the graph");
-			System.out.println("e - the number of edges leaving each node");
-			System.out.println("min - the lower bound on edge capacities");
-			System.out.println("max - the upper bound on edge capacities");
-			System.out.println("f - path and file name for saving this graph");
-			System.out.println("Example: java RandomGraph 999 50 75 101 graph1.txt");
-		}else if(Integer.parseInt(args[0])> Integer.parseInt(args[1])){
-			if(Integer.parseInt(args[3]) >= Integer.parseInt(args[2])){
-				toFile(graphBuilder(Integer.parseInt(args[0]),Integer.parseInt(args[1]),Integer.parseInt(args[2]),Integer.parseInt(args[3])),args[4]);
-				System.out.println("\nDONE!");
-			}else{
-				System.out.println("\nFAIL!");
-				System.out.println("Max must be greater than or equal to min.");
-			}
-		}else{
-			System.out.println("\nFAIL!");
-			System.out.println("The number of vertices must exceed the number of edges leaving each node.");
-		}
-	}
-	
-	/**
-	 * This method creates a 3 token representation of a graph.
-	 * @param v The number of vertices in the graph
-	 * @param e The number of edges leaving each vertice
-	 * @param min The lowerbound on the capacity value of each edge
-	 * @param max The upperbound on the capacity value of each edge
-	 * @return A string buffer, each line contains 3 tokens corresponding 
-	 *			to a directed edge: the tail, the head, and the capacity.
-	 */
-	public static StringBuffer graphBuilder(int v, int e, int min, int max){
-		int i;
-		int j;
-		int head;
-		int c;
-		SortedSet s;
-		Random gen = new Random();
-		StringBuffer bfr = new StringBuffer();
-		
-		//Add distinguished node s
-		j = 1;
-		s = new TreeSet();
-		while(j <= e){
-			head = gen.nextInt(v) + 1;
-			if(!s.contains(head)){
-				s.add(head);
-				c = min + gen.nextInt(max - min + 1);
-				bfr.append("s"+" "+"v"+head+" "+c+NL);	
-				j++;
-			}
-		}
-		
-		//Add distinguished node t
-		j = 1;
-		s = new TreeSet();
-		while(j <= e){
-			int tail = gen.nextInt(v) + 1;
-			if(!s.contains(tail)){
-				s.add(tail);
-				c = min + gen.nextInt(max - min + 1);
-				bfr.append("v"+tail+" "+"t"+" "+c+NL);
-				j++;
-			}
-		}
-		
-		//Add internal nodes
-		for(i = 1; i <= v; i++){
-			s = new TreeSet();
-			s.add(i);
-			j = 1;
-			while(j <= e){
-				head = gen.nextInt(v) + 1;
-				if(!s.contains(head)){
-					s.add(head);
-					c = min + gen.nextInt(max - min + 1);
-					bfr.append("v"+i+" "+"v"+head+" "+c+NL);
-					j++;
-				}
-			}
-		}
-		return bfr;
-	}
-	
 
-	/**
-	 * This method attempts to save a string at a given location.
-	 * @param outString The StringBuffer containing the data being saved
-	 * @param filename The complete file path including file name
-	 */
-	private static void toFile(StringBuffer outString, String filename){
-		try{
-			BufferedWriter fout = new BufferedWriter(new FileWriter(filename));
-			fout.write(outString.toString());
-			fout.close();
-		}catch(Exception e){
-			System.out.println("Error saving file.");
-			System.out.println("Please check file paths and restart this program.");
-			System.exit(1);
-		} 
-	}
+    public void BuildGraph(final String fileName,  String directory,  int vertices,  int dense,  int maxCapacity,  int minCapacity)
+    {
+     Random random = new Random();
+     try{
+         String dirName = directory;//           
+           if (dirName.equals ("")) {dirName = ".";}
+
+	       File outputfile = new File(dirName, fileName);
+                  int[][] Graph = new int[vertices][vertices];
+	              int n, m;
+	              
+                         for ( n = 0; n < vertices; n++)
+                          for ( m = n+1; m < vertices; m++)
+                          {
+                              int randomInt = (random.nextInt((maxCapacity-minCapacity+1))+minCapacity) ;
+                              // Math.random returns from 0 to 1
+                              int k =(int) (1000.0*Math.random()/10.0);
+                              int b = (k < dense) ? 1 : 0;
+                              if(b == 0)
+                              {
+                                  Graph[n][m] = Graph[m][n] = b;
+                              }
+                              else
+                              {
+                                Graph[n][m] = Graph[m][n] = randomInt;
+                              }
+                            }
+               			  
+                      
+            PrintWriter output = new  PrintWriter(new FileWriter(outputfile));
+
+            for(int x = 0; x < Graph.length; x++)
+            {
+                if(x == 0)
+                {
+                    for(int y = 0; y < Graph[x].length; y++)
+                    {
+                        String value = String.valueOf(Graph[x][y]);
+                        if(y != 0)
+                        {
+                            if(value.equals("0") == false)
+                            {
+                                output.print("s " + String.valueOf(y) + " " +  value +"\n");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if(x == Graph.length-1)
+                    {
+                        for(int y = 0; y < Graph[x].length; y++)
+                        {
+                            String value = String.valueOf(Graph[x][y]);
+                            if(y != 0)
+                            {
+                                if(value.equals("0") == false)
+                                {
+                                    output.print(String.valueOf(y) + " t " +  value +"\n");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for(int y = 0; y < Graph[x].length; y++)
+                        {
+                            String value = String.valueOf(Graph[x][y]);
+                            if(y != 0)
+                            {
+                                if(value.equals("0") == false)
+                                {
+                                    output.print(x + " " + String.valueOf(y) + " " +  value +"\n");
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+
+         output.close();
+       } 
+        catch (IOException e)
+          {
+            System.err.println("Error opening file" +e);
+            return;
+          }
+     System.out.print("\nDone");
+ }
+	
+	
 }

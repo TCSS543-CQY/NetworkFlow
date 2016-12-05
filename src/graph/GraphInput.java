@@ -98,9 +98,9 @@ public class GraphInput {
     /**
      * Code to test the methods of this class.
      */
-    public static void main (String args[]) {
-          SimpleGraph G;
-          G = new SimpleGraph();
-          LoadSimpleGraph(G, args[0]);
-    }
+//    public static void main (String args[]) {
+//          SimpleGraph G;
+//          G = new SimpleGraph();
+//          LoadSimpleGraph(G, args[0]);
+//    }
 }
