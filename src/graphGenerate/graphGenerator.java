@@ -5,7 +5,7 @@ import graph.SimpleGraph;
 
 /**
  * For each graph type, generate a range of graphs with different vertices count,
- * degrees, and probablities. 
+ * degrees, and probabilities. 
  * @author yanan, weijia chen, zijun qu
  * @version Dec, 2016
  *
@@ -36,6 +36,7 @@ public class graphGenerator {
     	
     	SimpleGraph[] graphArray = new SimpleGraph[size]; 
         GraphInput graphInput = new GraphInput();
+        // use a fixed size of vertices count of (size * 10) for every type
         
         switch (type.toLowerCase()){
         
@@ -45,7 +46,7 @@ public class graphGenerator {
 				SimpleGraph bipartite = new SimpleGraph();
 		    	BipartiteGraph bg = new BipartiteGraph();
 		    	// generate bipartite and write to a file
-				bg.graphGenerator(i, i, MIN_CAPACITY, MAX_CAPACITY, MAX_PROBABILITY, FILENAME);
+				bg.graphGenerator(i*10, i*10, MIN_CAPACITY, MAX_CAPACITY, MAX_PROBABILITY, FILENAME);
 				// load from file the bipartite to a SimpleGraph instance
 				graphInput.LoadSimpleGraph(bipartite,FILENAME);
 				graphArray[i-1] = bipartite;
@@ -56,7 +57,7 @@ public class graphGenerator {
 			for(int i =1;i<=size;i++){
 				SimpleGraph fix = new SimpleGraph();
 				FixedDegreeGraph fdg = new FixedDegreeGraph();
-				fdg.graphGenerator(i, DEGREE, MIN_CAPACITY, MAX_CAPACITY, FILENAME);
+				fdg.graphGenerator(i*10, DEGREE, MIN_CAPACITY, MAX_CAPACITY, FILENAME);
 				graphInput.LoadSimpleGraph(fix,FILENAME);
 				graphArray[i-1] = fix;
 			}
@@ -66,7 +67,8 @@ public class graphGenerator {
 			for(int i =1;i<=size;i++){
 				SimpleGraph mesh = new SimpleGraph();
 				// parameters: row count, col count, max capacity and filename
-				String[] args = {String.valueOf(i),String.valueOf(i),String.valueOf(MAX_CAPACITY),FILENAME};
+				int row_count = i*10;
+				String[] args = {String.valueOf(row_count),String.valueOf(row_count),String.valueOf(MAX_CAPACITY),FILENAME};
 				MeshGenerator mg = new MeshGenerator(args);
 				mg.generate();
 				graphInput.LoadSimpleGraph(mesh,FILENAME);
@@ -79,12 +81,12 @@ public class graphGenerator {
 			for(int i =1;i<=size;i++){
 				SimpleGraph random = new SimpleGraph();
 				RandomGraph rg = new RandomGraph();
-				rg.BuildGraph(FILENAME, ".", i, (int) (MAX_PROBABILITY*100), MIN_CAPACITY, MAX_CAPACITY);
+				rg.BuildGraph(FILENAME, ".", i*10, (int) (MAX_PROBABILITY*100), MIN_CAPACITY, MAX_CAPACITY);
 				graphInput.LoadSimpleGraph(random,FILENAME);								
 				graphArray[i-1] = random;
 				
 			}
-			System.out.println("random");
+			System.out.println("random graph");
 			break;
 		default:
 			System.out.println("check graph type.");
