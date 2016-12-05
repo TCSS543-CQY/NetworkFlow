@@ -31,10 +31,10 @@ public class PerformanceTest {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		  SimpleGraph simpleG;
-          simpleG= new SimpleGraph();
-        
-        	  GraphInput.LoadSimpleGraph(simpleG, args[0]);
+//		  SimpleGraph simpleG;
+//          simpleG= new SimpleGraph();
+//        
+//        	  GraphInput.LoadSimpleGraph(simpleG, args[0]);
         	  System.out.print(performanceTesting());
         
 	}
@@ -124,33 +124,55 @@ public class PerformanceTest {
         long startTime = 0;
 		String directory = System.getProperty("user.dir");
 		
-		String fileName = null;
+		String fileName1 = "vertex_range_result.txt";
+		String fileName2 = "parameter_range_result.txt";
+		String vertexrange_result = null;
+		String pararange_result = null;
 		System.out.println("---------------------------------------------------\n");
 		
 		// test three algorithms on graphs, change vertex count
 		SimpleGraph[] bipartiteG_arr = graphGenerator.VertexRange(SIZE, "bipartite");
 		  for(int i = 0;i<SIZE;i++){
 
-	        	System.out.println(bipartiteG_arr[i].numVertices()+" - "+bipartiteG_arr[i].numEdges());
-	        	
-	        	
-	        	 String str = runAlgorithms(bipartiteG_arr[i]);
-	         	System.out.println(i+" "+ str);
-	         
-	        	
+	        	System.out.println(bipartiteG_arr[i].numVertices()+" - "+bipartiteG_arr[i].numEdges());        	
+	        	 String tmp_rlt = runAlgorithms(bipartiteG_arr[i]);
+	         	System.out.println(i+" "+ tmp_rlt);
+	         	vertexrange_result = vertexrange_result+tmp_rlt;
+	         	        	
 	        }
-	        
-		try
-		{
-			PrintWriter outFile = new  PrintWriter(new FileWriter(new File(directory, fileName)));
+		  
+		  
+		  
+		// test three algorithms on graphs, change parameter
+			SimpleGraph[] bipartiteG_arr2 = graphGenerator.ParameterRange(SIZE, "bipartite");
+			  for(int i = 0;i<SIZE;i++){
 
-		
-		}
-		catch(Exception ex)
-		{
-			System.out.println(ex);
-		}
-		return null;
+		        	System.out.println(bipartiteG_arr2[i].numVertices()+" - "+bipartiteG_arr2[i].numEdges());        	
+		        	String tmp_rlt = runAlgorithms(bipartiteG_arr2[i]);
+		         	System.out.println(i+" "+ tmp_rlt);
+		         	pararange_result = pararange_result+tmp_rlt;
+		         	        	
+		        }
+			  
+			  
+			  
+		  try(  PrintWriter out = new PrintWriter( fileName1 )  ){
+	            out.println(vertexrange_result );
+	        } catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.print("error when writing test performance results");
+			}
+		  
+		  
+		  try(  PrintWriter out = new PrintWriter( fileName2 )  ){
+	            out.println(pararange_result );
+	        } catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.print("error when writing test performance results");
+			}
+		return vertexrange_result;
 	}
 	
 
