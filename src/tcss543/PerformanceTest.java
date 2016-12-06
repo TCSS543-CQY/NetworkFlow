@@ -95,7 +95,8 @@ public class PerformanceTest {
 		 ut.getAverageRunTime(runtimeArray) + " Milliseconds.");
 		 results =results+"Scaling FordFulkerson test" + "\t" + ut.getAverageRunTime(runtimeArray);
 		 results = results + "\n";
-		 
+		 results = results + "Maxflow of this graph is: "+preFlowMaxflow;
+		 results = results + "\n";
 		try (PrintWriter out = new PrintWriter("run_textfile_results.txt")) {
 			out.println(results);
 		} catch (IOException e) {
