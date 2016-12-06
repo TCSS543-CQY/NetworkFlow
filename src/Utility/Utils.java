@@ -7,8 +7,15 @@ public class Utils {
 	 * @param runtime
 	 * @return
 	 */
-	public static long getAverageRunTime(long[] runtime){
-		return 0;
+	public static double getAverageRunTime(long[] runtime){
+		long sum = 0;
+		for(int i=0; i < runtime.length ; i++)
+            sum = sum + runtime[i];
+   
+    //calculate average value
+    double average = (double)sum / (double)runtime.length;
+   
+		return average;
 	}
 
 }

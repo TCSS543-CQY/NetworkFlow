@@ -167,10 +167,10 @@ public class MeshGenerator {
    * @param args-
    *          command line args
    */
-//  public static void main(String[] args) {
-//
-//    MeshGenerator mesh = new MeshGenerator(args);
-//    mesh.generate();
-//  }
+  public static void main(String[] args) {
+
+    MeshGenerator mesh = new MeshGenerator(args);
+    mesh.generate();
+  }
 
 }

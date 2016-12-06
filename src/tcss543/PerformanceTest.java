@@ -54,18 +54,18 @@ public class PerformanceTest {
 	        System.out.println("------------------------------------");
 	        
 	        //Ford-Fulkerson
-	    	double FFMaxflow = 0;
-	        for(int i = 0;i<10;i++){ 
-	        	startTime = System.currentTimeMillis();
-	        	FFMaxflow = FordFulkerson.FordFulkerson(g);
-	        	runtimeArray[i] = System.currentTimeMillis() - startTime;
-	        }
-	        System.out.println("The maximum flow of the input Graph calculated "
-	        		+ "by Ford-Fulkerson algorithm is "+FFMaxflow);
-	        System.out.println("The average running time of 10 preflow Ford-Fulkerson "
-	        		+ "algorithm is : " + ut.getAverageRunTime(runtimeArray) + " Milliseconds.");
-	        results = results+","+String.valueOf(ut.getAverageRunTime(runtimeArray));
-	        
+//	    	double FFMaxflow = 0;
+//	        for(int i = 0;i<10;i++){ 
+//	        	startTime = System.currentTimeMillis();
+//	        	FFMaxflow = FordFulkerson.FordFulkerson(g);
+//	        	runtimeArray[i] = System.currentTimeMillis() - startTime;
+//	        }
+//	        System.out.println("The maximum flow of the input Graph calculated "
+//	        		+ "by Ford-Fulkerson algorithm is "+FFMaxflow);
+//	        System.out.println("The average running time of 10 preflow Ford-Fulkerson "
+//	        		+ "algorithm is : " + ut.getAverageRunTime(runtimeArray) + " Milliseconds.");
+//	        results = results+","+String.valueOf(ut.getAverageRunTime(runtimeArray));
+//	        
 	        
 	        //Run Preflow Push
 	        double preFlowMaxflow = 0;
@@ -80,23 +80,23 @@ public class PerformanceTest {
 	        		+ "calculated by Preflow Push is "+preFlowMaxflow);
 	        System.out.println("The average running time of 10 "
 	        		+ "preflow push algorithm runs is : " + ut.getAverageRunTime(runtimeArray) + " Milliseconds.");
-	        results = results+","+String.valueOf(ut.getAverageRunTime(runtimeArray));
+	        results = "PreflowPush test"+"\t"+String.valueOf(ut.getAverageRunTime(runtimeArray));
 	        
 	        
 
 	        //Run scaling Ford-Fulkerson
-	        double SFFMaxflow = 0.0;
-	        for(int i = 0;i<10;i++){      	
-	        	startTime = System.currentTimeMillis();
-	        	SFFMaxflow = ScalingFordFulkerson.ScalingFordFulkerson(g);
-	        	runtimeArray[i] = System.currentTimeMillis() - startTime;
-	        }   
-	        System.out.println("The maximum flow of the input Graph calculated by scaling "
-	        		+ "Ford-Fulkerson algorithm is "+SFFMaxflow);
-	        System.out.println("The average running time of 10 scaling Ford-Fulkerson "
-	        		+ "algorithm is : " + ut.getAverageRunTime(runtimeArray) + " Milliseconds.");
-	        results = results+","+String.valueOf(ut.getAverageRunTime(runtimeArray));
-	        
+//	        double SFFMaxflow = 0.0;
+//	        for(int i = 0;i<10;i++){      	
+//	        	startTime = System.currentTimeMillis();
+//	        	SFFMaxflow = ScalingFordFulkerson.ScalingFordFulkerson(g);
+//	        	runtimeArray[i] = System.currentTimeMillis() - startTime;
+//	        }   
+//	        System.out.println("The maximum flow of the input Graph calculated by scaling "
+//	        		+ "Ford-Fulkerson algorithm is "+SFFMaxflow);
+//	        System.out.println("The average running time of 10 scaling Ford-Fulkerson "
+//	        		+ "algorithm is : " + ut.getAverageRunTime(runtimeArray) + " Milliseconds.");
+//	        results = results+","+String.valueOf(ut.getAverageRunTime(runtimeArray));
+//	        
 	        try(  PrintWriter out = new PrintWriter( "run_textfile_results.txt" )  ){
 	            out.println(results );
 	        } catch (IOException e) {
