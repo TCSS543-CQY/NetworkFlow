@@ -48,7 +48,7 @@ public class GraphInput {
      */
     public static Hashtable LoadSimpleGraph(SimpleGraph newgraph, String pathandfilename){
         BufferedReader  inbuf = InputLib.fopen(pathandfilename);
-        System.out.println("Opened " + pathandfilename + " for input.");
+        //System.out.println("Opened " + pathandfilename + " for input.");
         String  line = InputLib.getLine(inbuf); // get first line
         StringTokenizer sTok;
         int n, linenum = 0;
@@ -90,7 +90,7 @@ public class GraphInput {
         }
 
         InputLib.fclose(inbuf);
-        System.out.println("Successfully loaded "+ linenum + " lines. ");
+      //  System.out.println("Successfully loaded "+ linenum + " lines. ");
         return table;
     }
 

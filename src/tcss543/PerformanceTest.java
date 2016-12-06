@@ -50,7 +50,7 @@ public class PerformanceTest {
 
 		long[] runtimeArray = new long[10];
 		long startTime = 0;
-		String results = null;
+		String results = "";
 		System.out.println("\n");
 		System.out.println("result for running all algorithem 10 times given an input file: ");
 		//System.out.println("------------------------------------");
@@ -62,11 +62,10 @@ public class PerformanceTest {
 			FFMaxflow = FordFulkerson.FordFulkerson(g);
 			runtimeArray[i] = System.currentTimeMillis() - startTime;
 		}
-		System.out.println(
-				"The maximum flow of the input Graph calculated " + "by Ford-Fulkerson algorithm is " + FFMaxflow);
-		System.out.println("The average running time of 10 preflow Ford-Fulkerson " + "algorithm is : "
+		System.out.println("The maximum flow" + "by Ford-Fulkerson is " + FFMaxflow);
+		System.out.println("The average running time of Ford-Fulkerson is : "
 				+ ut.getAverageRunTime(runtimeArray) + " Milliseconds.");
-		results = "FordFulkerson Test" + "\t" + String.valueOf(ut.getAverageRunTime(runtimeArray));
+		results = "FordFulkerson Test" + "\t" + ut.getAverageRunTime(runtimeArray);
 		results = results + "\n";
 
 		// Run Preflow Push
@@ -78,11 +77,11 @@ public class PerformanceTest {
 			runtimeArray[i] = System.currentTimeMillis() - startTime;
 
 		}
-		System.out.println("The maximum flow of the input Graph " + "calculated by Preflow Push is " + preFlowMaxflow);
-		System.out.println("The average running time of 10 " + "preflow push algorithm runs is : "
+		System.out.println("The maximum flow by Preflow Push is " + preFlowMaxflow);
+		System.out.println("The average running time of preflow push is : "
 				+ ut.getAverageRunTime(runtimeArray) + " Milliseconds.");
-		results = results+"PreflowPush test" + "\t" + String.valueOf(ut.getAverageRunTime(runtimeArray));
-
+		results = results+"PreflowPush test" + "\t" + ut.getAverageRunTime(runtimeArray);
+		results = results + "\n";
 		// Run scaling Ford-Fulkerson
 		// double SFFMaxflow = 0.0;
 		// for(int i = 0;i<10;i++){
@@ -127,12 +126,14 @@ public class PerformanceTest {
 
 		String fileName1 = "vertex_range_result.txt";
 		String fileName2 = "parameter_range_result.txt";
-		String vertexrange_result = null;
-		String pararange_result = null;
+		String vertexrange_result = "";
+		String pararange_result = "";
 		System.out.println("---------------------------------------------------\n");
 
 		// test three algorithms on graphs, change vertex count
+		System.out.print("*****************************************"+"\n");
 		System.out.print("test on bipartite with different node count"+"\n");
+		vertexrange_result = vertexrange_result + "------------------------"+"\n";
 		vertexrange_result = vertexrange_result+"test on bipartite with different node count" + "\n";
 		SimpleGraph[] bipartiteG_arr = graphGenerator.VertexRange(SIZE, "bipartite");
 		for (int i = 0; i < SIZE; i++) {
@@ -140,6 +141,10 @@ public class PerformanceTest {
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
 			System.out.println(bipartiteG_arr[i].numVertices() + " \t " + bipartiteG_arr[i].numEdges());
 			// get average running time on each graph
+			vertexrange_result = vertexrange_result+"size iterator = "+i+"\n";
+			vertexrange_result = vertexrange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			vertexrange_result = vertexrange_result+bipartiteG_arr[i].numVertices() + " \t " + bipartiteG_arr[i].numEdges();
+			vertexrange_result =vertexrange_result+"\n";
 			String tmp_rlt = runAlgorithms(bipartiteG_arr[i]);
 			
 			System.out.println(tmp_rlt);
@@ -148,14 +153,19 @@ public class PerformanceTest {
 
 		}
 		
-		
+		System.out.print("*****************************************"+"\n");
 		System.out.print("test on fixeddegree with different node count"+"\n");
+		vertexrange_result = vertexrange_result + "------------------------"+"\n";
 		vertexrange_result = vertexrange_result+"test on fixeddegree with different node count" + "\n";
 		SimpleGraph[] fixdegree_arr = graphGenerator.VertexRange(SIZE, "fixeddegree");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print("size iterator = "+i+"\n");
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
 			System.out.println(fixdegree_arr[i].numVertices() + " \t " + fixdegree_arr[i].numEdges());
+			vertexrange_result = vertexrange_result+"size iterator = "+i+"\n";
+			vertexrange_result = vertexrange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			vertexrange_result = vertexrange_result+fixdegree_arr[i].numVertices() + " \t " + fixdegree_arr[i].numEdges();
+			vertexrange_result = vertexrange_result+"\n";
 			String tmp_rlt = runAlgorithms(fixdegree_arr[i]);
 			//System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
@@ -163,14 +173,19 @@ public class PerformanceTest {
 			vertexrange_result = vertexrange_result + tmp_rlt;
 
 		}
-
+		System.out.print("*****************************************"+"\n");
 		System.out.print("test on mesh with different node count"+"\n");
+		vertexrange_result = vertexrange_result + "------------------------"+"\n";
 		vertexrange_result = vertexrange_result+"test on mesh with different node count" + "\n";
 		SimpleGraph[] mesh_arr = graphGenerator.VertexRange(SIZE, "mesh");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print("size iterator = "+i+"\n");
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
 			System.out.println(mesh_arr[i].numVertices() + " \t " + mesh_arr[i].numEdges());
+			vertexrange_result = vertexrange_result+"size iterator = "+i+"\n";
+			vertexrange_result = vertexrange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			vertexrange_result = vertexrange_result+mesh_arr[i].numVertices() + " \t " + mesh_arr[i].numEdges();
+			vertexrange_result = vertexrange_result+"\n";
 			String tmp_rlt = runAlgorithms(mesh_arr[i]);
 			//System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
@@ -179,8 +194,9 @@ public class PerformanceTest {
 
 		}
 		
-		
+		System.out.print("*****************************************"+"\n");
 		System.out.print("test on random with different node count"+"\n");
+		vertexrange_result = vertexrange_result + "------------------------"+"\n";
 		vertexrange_result = vertexrange_result+"test on random with different node count" + "\n";
 	
 		SimpleGraph[] random_arr = graphGenerator.VertexRange(SIZE, "random");
@@ -188,6 +204,10 @@ public class PerformanceTest {
 			System.out.print("size iterator = "+i+"\n");
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
 			System.out.println(random_arr[i].numVertices() + " \t " + random_arr[i].numEdges());
+			vertexrange_result = vertexrange_result+"size iterator = "+i+"\n";
+			vertexrange_result = vertexrange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			vertexrange_result = vertexrange_result+random_arr[i].numVertices() + " \t " + random_arr[i].numEdges();
+			vertexrange_result = vertexrange_result+"\n";
 			String tmp_rlt = runAlgorithms(random_arr[i]);
 			//System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
@@ -199,8 +219,9 @@ public class PerformanceTest {
 		
 		
 		// test three algorithms on graphs, change parameter
-		
+		System.out.print("*****************************************"+"\n");
 		System.out.print("test on bipartite with different probablities "+"\n");
+		pararange_result = pararange_result + "------------------------"+"\n";
 		pararange_result = pararange_result+"test on bipartite with different probablities" + "\n";
 	
 		SimpleGraph[] bipartiteG_arr2 = graphGenerator.ParameterRange(SIZE, "bipartite");
@@ -208,6 +229,10 @@ public class PerformanceTest {
 			System.out.print("size iterator = "+i+"\n");
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
 			System.out.println(bipartiteG_arr2[i].numVertices() + " \t " + bipartiteG_arr2[i].numEdges());
+			pararange_result = pararange_result+"size iterator = "+i+"\n";
+			pararange_result = pararange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			pararange_result = pararange_result+bipartiteG_arr2[i].numVertices() + " \t " + bipartiteG_arr2[i].numEdges();
+			pararange_result = pararange_result+"\n";
 			String tmp_rlt = runAlgorithms(bipartiteG_arr2[i]);
 			//System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
@@ -216,15 +241,21 @@ public class PerformanceTest {
 
 		}
 
-		
+		System.out.print("*****************************************"+"\n");
 		System.out.print("test on fixeddegree with different degrees "+"\n");
+		pararange_result = pararange_result + "------------------------"+"\n";
 		pararange_result = pararange_result+"test on fixeddegree with different degrees " + "\n";
 	
 		SimpleGraph[] fixdegree_arr2 = graphGenerator.VertexRange(SIZE, "fixeddegree");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print("size iterator = "+i+"\n");
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
-			System.out.println(fixdegree_arr2[i].numVertices() + " - " + fixdegree_arr2[i].numEdges());
+			System.out.println(fixdegree_arr2[i].numVertices() + " \t " + fixdegree_arr2[i].numEdges());
+			pararange_result = pararange_result+"size iterator = "+i+"\n";
+			pararange_result = pararange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			pararange_result = pararange_result+fixdegree_arr2[i].numVertices() + " \t " + fixdegree_arr2[i].numEdges();
+			pararange_result = pararange_result+"\n";
+			
 			String tmp_rlt = runAlgorithms(fixdegree_arr[i]);
 			//System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
@@ -233,15 +264,20 @@ public class PerformanceTest {
 
 		}
 
-		
+		System.out.print("*****************************************"+"\n");
 		System.out.print("test on mesh with different capacities "+"\n");
+		pararange_result = pararange_result + "------------------------"+"\n";
 		pararange_result = pararange_result+"test on mesh with different capacities" + "\n";
 	
 		SimpleGraph[] mesh_arr2 = graphGenerator.VertexRange(SIZE, "mesh");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print("size iterator = "+i+"\n");
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
-			System.out.println(mesh_arr2[i].numVertices() + " - " + mesh_arr2[i].numEdges());
+			System.out.println(mesh_arr2[i].numVertices() + " \t " + mesh_arr2[i].numEdges());
+			pararange_result = pararange_result+"size iterator = "+i+"\n";
+			pararange_result = pararange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			pararange_result = pararange_result+mesh_arr2[i].numVertices() + " \t " + mesh_arr2[i].numEdges();
+			pararange_result = pararange_result+"\n";
 			String tmp_rlt = runAlgorithms(mesh_arr[i]);
 			//System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
@@ -250,14 +286,19 @@ public class PerformanceTest {
 
 		}
 		
-		
+		System.out.print("*****************************************"+"\n");
 		System.out.print("test on random with different denses "+"\n");
+		pararange_result = pararange_result + "------------------------"+"\n";
 		pararange_result = pararange_result+"test on random with different denses" + "\n";
 	
 		SimpleGraph[] random_arr2 = graphGenerator.VertexRange(SIZE, "random");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
-			System.out.println(random_arr2[i].numVertices() + " - " + random_arr2[i].numEdges());
+			System.out.println(random_arr2[i].numVertices() + " \t " + random_arr2[i].numEdges());
+			pararange_result = pararange_result+"size iterator = "+i+"\n";
+			pararange_result = pararange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			pararange_result = pararange_result+random_arr2[i].numVertices() + " \t " + random_arr2[i].numEdges();
+			pararange_result = pararange_result+"\n";
 			String tmp_rlt = runAlgorithms(random_arr[i]);
 			System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);

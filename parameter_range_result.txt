@@ -1,17 +1,69 @@
-nulltest on bipartite with different probablities
-FordFulkerson Test	0.3
-PreflowPush test	11.5FordFulkerson Test	0.2
-PreflowPush test	9.7FordFulkerson Test	0.1
-PreflowPush test	10.1test on fixeddegree with different degrees 
-FordFulkerson Test	0.0
-PreflowPush test	0.1FordFulkerson Test	0.0
-PreflowPush test	0.1FordFulkerson Test	0.1
-PreflowPush test	0.1test on mesh with different capacities
+------------------------
+test on bipartite with different probablities
+size iterator = 0
+vertext count  	edge count
+102 	 100
 FordFulkerson Test	0.2
-PreflowPush test	1.3FordFulkerson Test	3.3
-PreflowPush test	80.2FordFulkerson Test	9.8
-PreflowPush test	245.9test on random with different denses
-FordFulkerson Test	0.0
-PreflowPush test	0.1FordFulkerson Test	0.2
-PreflowPush test	0.2FordFulkerson Test	0.7
-PreflowPush test	0.4
+PreflowPush test	11.9
+size iterator = 1
+vertext count  	edge count
+102 	 100
+FordFulkerson Test	0.2
+PreflowPush test	10.3
+size iterator = 2
+vertext count  	edge count
+102 	 100
+FordFulkerson Test	0.1
+PreflowPush test	11.3
+------------------------
+test on fixeddegree with different degrees 
+size iterator = 0
+vertext count  	edge count
+7 	 14
+FordFulkerson Test	0
+PreflowPush test	0
+size iterator = 1
+vertext count  	edge count
+12 	 24
+FordFulkerson Test	0
+PreflowPush test	0
+size iterator = 2
+vertext count  	edge count
+17 	 34
+FordFulkerson Test	0
+PreflowPush test	0.2
+------------------------
+test on mesh with different capacities
+size iterator = 0
+vertext count  	edge count
+27 	 70
+FordFulkerson Test	0.5
+PreflowPush test	0.1
+size iterator = 1
+vertext count  	edge count
+102 	 290
+FordFulkerson Test	5
+PreflowPush test	66
+size iterator = 2
+vertext count  	edge count
+227 	 660
+FordFulkerson Test	10.3
+PreflowPush test	1827
+------------------------
+test on random with different denses
+size iterator = 0
+vertext count  	edge count
+6 	 16
+FordFulkerson Test	0
+PreflowPush test	0
+size iterator = 1
+vertext count  	edge count
+11 	 81
+FordFulkerson Test	0.4
+PreflowPush test	0
+size iterator = 2
+vertext count  	edge count
+16 	 196
+FordFulkerson Test	0.8
+PreflowPush test	0.1
+

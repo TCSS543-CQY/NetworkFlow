@@ -1,5 +1,8 @@
 package Utility;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
 public class Utils {
 	
 	/**
@@ -7,15 +10,26 @@ public class Utils {
 	 * @param runtime
 	 * @return
 	 */
-	public static double getAverageRunTime(long[] runtime){
+	public static String getAverageRunTime(long[] runtime){
+		
+		
+		BigDecimal SUM, AVERAGE;
+	
+           
 		long sum = 0;
+	
 		for(int i=0; i < runtime.length ; i++)
             sum = sum + runtime[i];
+		
    
     //calculate average value
-    double average = (double)sum / (double)runtime.length;
-   
-		return average;
+	 SUM = new BigDecimal(sum)  ;
+	 BigDecimal RUN_LEN = new BigDecimal(runtime.length);
+	        
+    AVERAGE = SUM.divide(RUN_LEN);
+    //DecimalFormat df = new DecimalFormat("#.#####");
+    String average_str = AVERAGE.toString();
+	return average_str;
 	}
 
 }
