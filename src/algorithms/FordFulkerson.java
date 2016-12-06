@@ -23,59 +23,75 @@ public final class FordFulkerson
 		LinkedList<ResidualVertex> currentPath;
 		while(!(currentPath = findPath()).isEmpty())
 		{
-			double bottleneck = findBottleneck(currentPath);
+			double minCapacity = findminCapacity(currentPath);
 
-			pushFlow(currentPath, bottleneck);
-			maxFlow += bottleneck;
+			pushFlow(currentPath, minCapacity);
+			maxFlow += minCapacity;
 
 		}
 		return maxFlow;
 	}
-	private static void pushFlow(LinkedList<ResidualVertex> stPath, double bottleneck)
+	private static void pushFlow(LinkedList<ResidualVertex> stPath, double minCapacity)
 	{
 		for(int i=0; i<stPath.size()-1; i++)
 		{
 			ResidualVertex rv = stPath.get(i);
 			ResidualVertex rw = stPath.get(i+1);
 			ResidualEdge forward = gResidual.getEdge(rv, rw);
-			if(forward.getCapacity() == bottleneck)
+			if(forward.getCapacity() == minCapacity)
 			{
 				gResidual.removeEdge(forward);
 			}
 			else
 			{
-				forward.setCapacity(forward.getCapacity() - bottleneck);
+				forward.setCapacity(forward.getCapacity() - minCapacity);
 				gResidual.newEdge(forward);
 			}
 
 			ResidualEdge backward = gResidual.getEdge(rw, rv);
 			if(backward == null)
 			{
-				backward = new ResidualEdge(rw,rv,bottleneck);
+				backward = new ResidualEdge(rw,rv,minCapacity);
 				gResidual.insertEdge(rw, rv, backward);
 			}
 			else
 			{
-				backward.setCapacity(backward.getCapacity() + bottleneck);
+				backward.setCapacity(backward.getCapacity() + minCapacity);
 				gResidual.newEdge(backward);
 			}
 		}
 	}
-	private static double findBottleneck(LinkedList<ResidualVertex> path)
+
+	/** define the minCapactiy as the minimum capacity of edges in path
+	 * @return the minCapacity of the edges
+	 */
+	public static void newVertexVisited()
 	{
-		double bottleneck = 100000;
+		Iterator i;
+		for (i= gResidual.vertices(); i.hasNext(); )
+		{
+			ResidualVertex v = (ResidualVertex) i.next();
+			if(v.isVisited())
+			{
+				v.unvisit();
+			}
+		}
+	}
+	private static double findminCapacity(LinkedList<ResidualVertex> path)
+	{
+		double minCapacity = 100000;
 		for(int i=0; i<path.size()-1; i++)
 		{
 			ResidualVertex rv = path.get(i);
 			ResidualVertex rw = path.get(i+1);
 			ResidualEdge re = gResidual.getEdge(rv, rw);
 			double canPush = re.getCapacity();
-			if(bottleneck >= canPush)
+			if(minCapacity >= canPush)
 			{
-				bottleneck = canPush;
+				minCapacity = canPush;
 			}
 		}
-		return bottleneck;
+		return minCapacity;
 	}
 
 	private static LinkedList<ResidualVertex> findPath()
@@ -93,7 +109,7 @@ public final class FordFulkerson
 		{
 			path.clear();
 		}
-		updateVertexVisited();
+		newVertexVisited();
 		s.unvisit();
 		gResidual.newVertex(s);
 		return path;
@@ -135,18 +151,6 @@ public final class FordFulkerson
 		}
 	}
 
-	public static void updateVertexVisited()
-	{
-		Iterator i;
-		for (i= gResidual.vertices(); i.hasNext(); )
-		{
-			ResidualVertex v = (ResidualVertex) i.next();
-			if(v.isVisited())
-			{
-				v.unvisit();
-			}
-		}
-	}
 }
 
 

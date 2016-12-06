@@ -22,7 +22,7 @@ import java.util.*;
  */
 public class Vertex {
     /** the edge list for this vertex */
-    LinkedList incidentEdgeList;
+    public LinkedList incidentEdgeList;
 
     private Object data;              // an object associated with this vertex
     private Object name;              // a name associated with this vertex
