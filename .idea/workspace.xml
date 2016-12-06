@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79e07758-e5d9-4936-80e1-cd9e4c68631d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/residualgraph/ResidualEdge.java" afterPath="$PROJECT_DIR$/src/residualgraph/ResidualEdge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/residualgraph/ResidualGraph.java" afterPath="$PROJECT_DIR$/src/residualgraph/ResidualGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithms/PreflowPush.java" afterPath="$PROJECT_DIR$/src/algorithms/PreflowPush.java" />
     </list>
     <ignored path="NetworkFlow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +28,8 @@
       <file leaf-file-name="FordFulkerson.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algorithms/FordFulkerson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+            <state relative-caret-position="330">
+              <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,11 +37,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResidualGraph.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PreflowPush.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/algorithms/PreflowPush.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2355">
+              <caret line="157" column="32" selection-start-line="157" selection-start-column="32" selection-end-line="157" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3963#3986#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResidualGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+            <state relative-caret-position="2715">
+              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
               <folding>
                 <element signature="e#562#563#0" expanded="true" />
                 <element signature="e#615#616#0" expanded="true" />
@@ -115,6 +128,7 @@
         <option value="$PROJECT_DIR$/src/residualgraph/ResidualVertex.java" />
         <option value="$PROJECT_DIR$/src/residualgraph/ResidualEdge.java" />
         <option value="$PROJECT_DIR$/src/residualgraph/ResidualGraph.java" />
+        <option value="$PROJECT_DIR$/src/algorithms/PreflowPush.java" />
       </list>
     </option>
   </component>
@@ -654,12 +668,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480961842635</updated>
-      <workItem from="1480961855613" duration="8002000" />
+      <workItem from="1480961855613" duration="9658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8002000" />
+    <option name="totallyTimeSpent" value="9658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="842" y="0" width="838" height="1050" extended-state="0" />
@@ -718,16 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithms/FordFulkerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tcss543/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -759,11 +763,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+        <state relative-caret-position="2715">
+          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
           <folding>
             <element signature="e#562#563#0" expanded="true" />
             <element signature="e#615#616#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/FordFulkerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/PreflowPush.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2355">
+          <caret line="157" column="32" selection-start-line="157" selection-start-column="32" selection-end-line="157" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3963#3986#0" expanded="true" />
           </folding>
         </state>
       </provider>

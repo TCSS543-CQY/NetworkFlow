@@ -1,5 +1,5 @@
 
-}ckage algorithms;
+package algorithms;
 
 import graph.Edge;
 import graph.SimpleGraph;
@@ -53,7 +53,7 @@ public class PreflowPush
             
         }
         
-        maxFlow = gResidual.getExcessAtSink();
+        maxFlow = gResidual.getExcessSink();
     }
     private static ResidualEdge getMinimumHeightAdjacentVertex(ResidualVertex v)
     {
@@ -64,7 +64,7 @@ public class PreflowPush
         for (Object edge : edges) 
         {
             ResidualEdge e = (ResidualEdge) edge;
-            w = e.getSecondEndpoint();
+            w = e.getOtherEnd();
             if(minimumHeight > w.getHeight())
             {
                 minimumHeight = w.getHeight();
@@ -79,7 +79,7 @@ public class PreflowPush
      */
     private static void push(ResidualVertex v, ResidualEdge forward)
     {
-        ResidualVertex w = forward.getSecondEndpoint();
+        ResidualVertex w = forward.getOtherEnd();
         double excessAvailable = v.getExcess();//77
         double canPush = forward.getCapacity();//40
         double pushValue = (excessAvailable < canPush) ? excessAvailable : canPush;//40
@@ -90,10 +90,10 @@ public class PreflowPush
         else
         {
             forward.setCapacity(forward.getCapacity() - pushValue);
-            gResidual.updateEdge(forward);
+            gResidual.newEdge(forward);
         }
         v.setExcess(v.getExcess() - pushValue);
-        gResidual.updateVertex(v);
+        gResidual.newVertex(v);
        ResidualEdge backward = gResidual.getEdge(w, v);
         if(backward == null)
         {
@@ -103,11 +103,11 @@ public class PreflowPush
         else
         {
             backward.setCapacity(backward.getCapacity() + pushValue);
-            gResidual.updateEdge(backward);
+            gResidual.newEdge(backward);
         }
         
         w.setExcess(w.getExcess() + pushValue);
-        gResidual.updateVertex(w);
+        gResidual.newVertex(w);
        
         
     }
@@ -122,7 +122,7 @@ public class PreflowPush
         for(int i=0; i<outgoingEdges.size();i++)
         {
             ResidualEdge e = (ResidualEdge) outgoingEdges.get(i);
-            ResidualVertex w = e.getSecondEndpoint();
+            ResidualVertex w = e.getOtherEnd();
             if(minimumHeight > w.getHeight())
             {
                 minimumHeight = w.getHeight();
@@ -130,7 +130,7 @@ public class PreflowPush
         }
         
         v.setHeight(minimumHeight + 1);
-        gResidual.updateVertex(v);
+        gResidual.newVertex(v);
     }
     
     /**
@@ -173,7 +173,7 @@ public class PreflowPush
             {
                 edge = new ResidualEdge(rw, rv, edgeCapacity);
                 rw.setExcess(edge.getCapacity());
-                gResidual.updateVertex(rw);
+                gResidual.newVertex(rw);
                 gResidual.insertEdge(rw, rv, edge);
             }
             else
