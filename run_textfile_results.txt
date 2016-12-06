@@ -1,2 +1,2 @@
-FordFulkerson Test	0.8
-PreflowPush test	1.1
+FordFulkerson Test	0.7
+PreflowPush test	0.4

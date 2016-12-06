@@ -15,13 +15,13 @@ public class graphGenerator {
 	// temporary file path of generated graphs
 	private static final String FILENAME = "generatedGraph.txt";
 	// number of nodes on the source side
-	private static int S_NODE_COUNT = 200;
+	private static int S_NODE_COUNT = 50;
 	// number of node on the sink side
-	private static int T_NODE_COUNT = 200;
+	private static int T_NODE_COUNT = 50;
 	private static int MIN_CAPACITY = 1;
 	private static int MAX_CAPACITY = 10;
 	// for fixed degree, degree means the number of edges out of each node
-	private static int DEGREE = 5;
+	private static int DEGREE = 2;
 	private static double MAX_PROBABILITY = 1;
 	
 	
@@ -55,7 +55,7 @@ public class graphGenerator {
 				graphInput.LoadSimpleGraph(bipartite, FILENAME);
 				graphArray[i - 1] = bipartite;
 			}
-			System.out.println("bipartite:parameter tuning");
+			System.out.println("generated bipartite for parameter tuning");
 			break;
 		case "fixeddegree":
 			for (int i = 1; i <= size; i++) {
@@ -66,7 +66,7 @@ public class graphGenerator {
 				graphInput.LoadSimpleGraph(fix, FILENAME);
 				graphArray[i - 1] = fix;
 			}
-			System.out.println("fixed degree:parameter tuning");
+			System.out.println("generated fixed degree for parameter tuning");
 			break;
 		case "mesh":
 			for (int i = 1; i <= size; i++) {
@@ -79,7 +79,7 @@ public class graphGenerator {
 				graphInput.LoadSimpleGraph(mesh, FILENAME);
 				graphArray[i - 1] = mesh;
 			}
-			System.out.println("mesh graph:parameter tuning");
+			System.out.println("generated mesh graph for parameter tuning");
 			break;
 
 		case "random":
@@ -92,7 +92,7 @@ public class graphGenerator {
 				graphArray[i - 1] = random;
 
 			}
-			System.out.println("random graph:parameter tuning");
+			System.out.println("generated random graph for parameter tuning");
 			break;
 		default:
 			System.out.println("check graph type.");
@@ -106,7 +106,7 @@ public class graphGenerator {
 	/**
 	 * generate a range of graphs with different number of vertices
 	 * here we use a the size in proportion to the number of graphs to 
-	 * be generated: node_count = 20 * size. We use in our main method,
+	 * be generated: node_count = 5 * size. We use in our main method,
 	 * size = 10 to test.
 	 * 
 	 * @param size
@@ -130,28 +130,28 @@ public class graphGenerator {
 				SimpleGraph bipartite = new SimpleGraph();
 				BipartiteGraph bg = new BipartiteGraph();
 				// generate bipartite and write to a file
-				bg.graphGenerator(i * 20, i * 20, MIN_CAPACITY, MAX_CAPACITY, MAX_PROBABILITY, FILENAME);
+				bg.graphGenerator(i * 5, i * 5, MIN_CAPACITY, MAX_CAPACITY, MAX_PROBABILITY, FILENAME);
 				// load from file the bipartite to a SimpleGraph instance
 				graphInput.LoadSimpleGraph(bipartite, FILENAME);
 				graphArray[i - 1] = bipartite;
 			}
-			System.out.println("bipartite:vertex count tuning");
+			System.out.println("generated bipartite graphs for vertex count tuning");
 			break;
 		case "fixeddegree":
 			for (int i = 1; i <= size; i++) {
 				SimpleGraph fix = new SimpleGraph();
 				FixedDegreeGraph fdg = new FixedDegreeGraph();
-				fdg.graphGenerator(i * 20, DEGREE, MIN_CAPACITY, MAX_CAPACITY, FILENAME);
+				fdg.graphGenerator(i * 5, DEGREE, MIN_CAPACITY, MAX_CAPACITY, FILENAME);
 				graphInput.LoadSimpleGraph(fix, FILENAME);
 				graphArray[i - 1] = fix;
 			}
-			System.out.println("fixed degree: vertex count tuning");
+			System.out.println("generated fixed degree for vertex count tuning");
 			break;
 		case "mesh":
 			for (int i = 1; i <= size; i++) {
 				SimpleGraph mesh = new SimpleGraph();
 				// parameters: row count, col count, max capacity and filename
-				int row_count = i * 20;
+				int row_count = i * 5;
 				String[] args = { String.valueOf(row_count), String.valueOf(row_count), String.valueOf(MAX_CAPACITY),
 						FILENAME };
 				MeshGenerator mg = new MeshGenerator(args);
@@ -159,19 +159,19 @@ public class graphGenerator {
 				graphInput.LoadSimpleGraph(mesh, FILENAME);
 				graphArray[i - 1] = mesh;
 			}
-			System.out.println("mesh graph: vertex count tuning");
+			System.out.println("generated mesh graphs for vertex count tuning");
 			break;
 
 		case "random":
 			for (int i = 1; i <= size; i++) {
 				SimpleGraph random = new SimpleGraph();
 				RandomGraph rg = new RandomGraph();
-				rg.BuildGraph(FILENAME, ".", i * 20, (int) (MAX_PROBABILITY * 100), MIN_CAPACITY, MAX_CAPACITY);
+				rg.BuildGraph(FILENAME, ".", i * 5, (int) (MAX_PROBABILITY * 100), MAX_CAPACITY, MIN_CAPACITY);
 				graphInput.LoadSimpleGraph(random, FILENAME);
 				graphArray[i - 1] = random;
 
 			}
-			System.out.println("random graph: vertex count tuning");
+			System.out.println("generated random graph for vertex count tuning");
 			break;
 		default:
 			System.out.println("check graph type.");

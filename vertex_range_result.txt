@@ -1,0 +1,17 @@
+nulltest on bipartite with different node count
+FordFulkerson Test	1.8
+PreflowPush test	0.5FordFulkerson Test	2.1
+PreflowPush test	4.8FordFulkerson Test	6.6
+PreflowPush test	7.8test on fixeddegree with different node count
+FordFulkerson Test	0.0
+PreflowPush test	0.1FordFulkerson Test	0.1
+PreflowPush test	0.2FordFulkerson Test	0.1
+PreflowPush test	1.1test on mesh with different node count
+FordFulkerson Test	0.3
+PreflowPush test	1.8FordFulkerson Test	7.3
+PreflowPush test	113.1FordFulkerson Test	14.2
+PreflowPush test	246.1test on random with different node count
+FordFulkerson Test	0.0
+PreflowPush test	0.1FordFulkerson Test	0.2
+PreflowPush test	0.3FordFulkerson Test	0.7
+PreflowPush test	0.7
