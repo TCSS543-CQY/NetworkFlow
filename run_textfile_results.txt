@@ -1,3 +1,4 @@
 FordFulkerson Test	0.8
-PreflowPush test	0.1
+PreflowPush test	0.6
+Scaling FordFulkerson test	0.3
 
