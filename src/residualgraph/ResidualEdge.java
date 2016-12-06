@@ -13,7 +13,7 @@ public class ResidualEdge {
     /**
      * allows you to setup the vertex v, w, and the edge capacity of the residual graph
      * @param v  one end of the edge of the residual graph
-     * @param w  the other end of the edge of the residual graph
+     * @param u  the other end of the edge of the residual graph
      * @param capacity capacity of the edge of the residual graph
      */
     public ResidualEdge(ResidualVertex v, ResidualVertex u, double capacity)

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79e07758-e5d9-4936-80e1-cd9e4c68631d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/residualgraph/ResidualEdge.java" afterPath="$PROJECT_DIR$/src/residualgraph/ResidualEdge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/residualgraph/ResidualVertex.java" afterPath="$PROJECT_DIR$/src/residualgraph/ResidualVertex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/residualgraph/ResidualGraph.java" afterPath="$PROJECT_DIR$/src/residualgraph/ResidualGraph.java" />
     </list>
     <ignored path="NetworkFlow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResidualGraph.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ResidualGraph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            <state relative-caret-position="474">
+              <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
               <folding>
                 <element signature="e#562#563#0" expanded="true" />
                 <element signature="e#615#616#0" expanded="true" />
@@ -51,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResidualVertex.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ResidualVertex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualVertex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+            <state relative-caret-position="1350">
+              <caret line="111" column="65" selection-start-line="111" selection-start-column="62" selection-end-line="111" selection-end-column="65" />
               <folding>
                 <element signature="e#1510#1511#0" expanded="true" />
                 <element signature="e#1545#1546#0" expanded="true" />
@@ -67,8 +66,8 @@
       <file leaf-file-name="ResidualEdge.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualEdge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -112,10 +111,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/residualgraph/ResidualGraph.java" />
         <option value="$PROJECT_DIR$/src/algorithms/FordFulkerson.java" />
         <option value="$PROJECT_DIR$/src/residualgraph/ResidualVertex.java" />
         <option value="$PROJECT_DIR$/src/residualgraph/ResidualEdge.java" />
+        <option value="$PROJECT_DIR$/src/residualgraph/ResidualGraph.java" />
       </list>
     </option>
   </component>
@@ -126,7 +125,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1680" />
+    <option name="x" value="842" />
+    <option name="width" value="838" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -654,15 +654,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480961842635</updated>
-      <workItem from="1480961855613" duration="4294000" />
+      <workItem from="1480961855613" duration="8002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4294000" />
+    <option name="totallyTimeSpent" value="8002000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="842" y="0" width="838" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -707,16 +707,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/tcss543/package-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tcss543/tcss543.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-300">
@@ -724,17 +714,6 @@
           <folding>
             <marker date="1480974440000" expanded="true" signature="304:368" ph="/**...*/" />
             <marker date="1480974440000" expanded="true" signature="4070:4072" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding>
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -749,21 +728,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualEdge.java">
+    <entry file="file://$PROJECT_DIR$/src/tcss543/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualVertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+        <state relative-caret-position="1350">
+          <caret line="111" column="65" selection-start-line="111" selection-start-column="62" selection-end-line="111" selection-end-column="65" />
           <folding>
             <element signature="e#1510#1511#0" expanded="true" />
             <element signature="e#1545#1546#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/residualgraph/ResidualGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+          <folding>
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
           </folding>
         </state>
       </provider>
