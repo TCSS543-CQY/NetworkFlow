@@ -2,7 +2,7 @@ package residualgraph;
 
 /**
  *
- * @author zijun,weijia,annie
+ * @author 
  */
 public class ResidualEdge {
     private double capacity;    //the capacity of the edge of residual graph

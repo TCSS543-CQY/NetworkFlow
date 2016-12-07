@@ -9,7 +9,7 @@ import residualgraph.ResidualGraph;
 import residualgraph.ResidualVertex;
 
 /**
- * @author annie,zijun,weijia
+ * @author zijun,weijia
  */
 public final class FordFulkerson
 {

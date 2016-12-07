@@ -16,7 +16,7 @@ import graph.SimpleGraph;
 
 
 /**
- * @author yanan, weijia chen, zijun qu;
+ * @author yanan
  * Dec, 2016
  *
  */

@@ -13,7 +13,7 @@ import residualgraph.ResidualVertex;
 
 /**
  *
- * @author zijun,weijia,annie 
+ * @author zijun,weijia
  */
 public class PreflowPush 
 {

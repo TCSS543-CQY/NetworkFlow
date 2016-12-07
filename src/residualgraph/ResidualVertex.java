@@ -2,7 +2,7 @@ package residualgraph;
 import java.util.*;
 /**
  *
- * @author zijun,weijia,annie
+ * @author zijun,weijia
  */
 public class ResidualVertex {
     public LinkedList outgoingEdge;

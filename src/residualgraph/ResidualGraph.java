@@ -1,7 +1,7 @@
 package residualgraph;
 import java.util.*;
 /**
- * @author zijun,weijia,annie
+ * @author zijun,weijia
  */
 public class ResidualGraph {
     LinkedList vertexList;
