@@ -18,7 +18,7 @@ import graphGenerate.graphGenerator;
  * This class is used to test the performance of three algorithms on a range of
  * graphs of each type.
  * 
- * @author yanan
+ * @author weijia 
  * @version Dec.2016
  *
  */
