@@ -26,7 +26,7 @@ public class PerformanceTest {
 
 	public static Utils ut;
 	public static graphGenerator gg;
-	private static int SIZE = 10;
+	private static int SIZE = 15;
 
 	public static void main(String[] args) throws Exception {
 

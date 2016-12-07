@@ -1,0 +1,5 @@
+FordFulkerson Test	114.3
+PreflowPush test	335.5
+Scaling FordFulkerson test	47
+Maxflow of this graph is: 267.0
+
