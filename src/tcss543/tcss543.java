@@ -26,12 +26,13 @@ public class tcss543 {
 	public static PerformanceTest pt;
 
 	/**
-	 * load graphs from txt files
+	 * load graphs from txt files and run the 3 algorithms on this graph
+	 * output maxflow and running time
 	 * @param args
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
+		
 		  SimpleGraph simpleG;
           simpleG= new SimpleGraph();
           if (args.length>0){

@@ -29,11 +29,7 @@ public class PerformanceTest {
 	private static int SIZE = 3;
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
-		// SimpleGraph simpleG;
-		// simpleG= new SimpleGraph();
-		//
-		// GraphInput.LoadSimpleGraph(simpleG, args[0]);
+
 		System.out.println("now testing three algorithms on "
 				+ "a range of auto-generated graphs");
 		performanceTesting();
@@ -41,7 +37,7 @@ public class PerformanceTest {
 	}
 
 	/**
-	 * run three algorithms on each type of graphs 10 times, and record running
+	 * run three algorithms on each type of graphs SIZE times, and record running
 	 * time
 	 * 
 	 * @return
@@ -71,7 +67,7 @@ public class PerformanceTest {
 		// Run Preflow Push
 		double preFlowMaxflow = 0;
 		for (int i = 0; i < 10; i++) {
-			// System.out.println(i+"th time for preFlow push");
+	
 			startTime = System.currentTimeMillis();
 			preFlowMaxflow = PreflowPush.PreflowPush(g);
 			runtimeArray[i] = System.currentTimeMillis() - startTime;
@@ -100,7 +96,7 @@ public class PerformanceTest {
 		try (PrintWriter out = new PrintWriter("run_textfile_results.txt")) {
 			out.println(results);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 			System.out.print("error when writing running time results");
 		}
@@ -320,7 +316,7 @@ public class PerformanceTest {
 			e.printStackTrace();
 			System.out.print("error when writing test performance results");
 		}
-		//return vertexrange_result;
+	
 	}
 
 }
