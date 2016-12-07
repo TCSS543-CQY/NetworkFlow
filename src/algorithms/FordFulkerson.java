@@ -18,13 +18,13 @@ public final class FordFulkerson
 	public static double FordFulkerson(SimpleGraph simpleG)
 	{
 		gResidual = new ResidualGraph();
-		initializeResidualGraph(simpleG);
+		initializeResidualGraphVertex(simpleG);
+		initializeResidualGraphEdges(simpleG);
 		maxFlow = 0;
 		LinkedList<ResidualVertex> currentPath;
 		while(!(currentPath = findPath()).isEmpty())
 		{
 			double minCapacity = findminCapacity(currentPath);
-
 			pushFlow(currentPath, minCapacity);
 			maxFlow += minCapacity;
 
@@ -99,23 +99,18 @@ public final class FordFulkerson
 		LinkedList<ResidualVertex> path = new LinkedList<ResidualVertex>();
 		ResidualVertex s = gResidual.getSource();
 		path = gResidual.depthFirstSearch(s, path);
-		if(!path.isEmpty())
-		{
-			for(int i=0; i<path.size();i++)
-			{
-			}
-		}
-		else
+		if(path.isEmpty())
 		{
 			path.clear();
 		}
+		
 		newVertexVisited();
 		s.unvisit();
 		gResidual.newVertex(s);
 		return path;
 	}
 
-	private static void initializeResidualGraph(SimpleGraph g)
+	private static void initializeResidualGraphVertex(SimpleGraph g)
 	{
 		Iterator vertices = g.vertices();
 		while(vertices.hasNext())
@@ -124,7 +119,11 @@ public final class FordFulkerson
 			ResidualVertex rv = new ResidualVertex(v.getName());
 			gResidual.insertVertex(rv);
 		}
+		
+	}
+	private static void initializeResidualGraphEdges(SimpleGraph g){
 		Iterator edges = g.edges();
+		Iterator vertices = g.vertices();
 		while(edges.hasNext())
 		{
 			Edge e = (Edge) edges.next();
@@ -150,7 +149,7 @@ public final class FordFulkerson
 			gResidual.insertEdge(rv, rw, re);
 		}
 	}
-
 }
+
 
 
