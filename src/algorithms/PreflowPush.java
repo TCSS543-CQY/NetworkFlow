@@ -1,4 +1,5 @@
-ckage algorithms;
+package algorithms;
+
 
 import java.util.HashMap;
 import java.util.Iterator;
