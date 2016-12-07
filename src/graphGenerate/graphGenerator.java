@@ -5,7 +5,7 @@ import graph.SimpleGraph;
 
 /**
  * For each graph type, generate a range of graphs with different vertices
- * count, degrees, and probabilities.
+ * count and probabilities.
  * 
  * @author yanan
  * @version Dec, 2016

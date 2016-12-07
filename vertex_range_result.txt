@@ -1,0 +1,429 @@
+------------------------
+test on bipartite with different node count
+size iterator = 0
+vertext count  	edge count
+12 	 23
+FordFulkerson Test	1.2
+PreflowPush test	0.7
+Scaling FordFulkerson test	0.5
+Maxflow of this graph is: 25.0
+size iterator = 1
+vertext count  	edge count
+22 	 75
+FordFulkerson Test	1.4
+PreflowPush test	1.7
+Scaling FordFulkerson test	0.6
+Maxflow of this graph is: 53.0
+size iterator = 2
+vertext count  	edge count
+32 	 133
+FordFulkerson Test	2.5
+PreflowPush test	2.3
+Scaling FordFulkerson test	1.2
+Maxflow of this graph is: 72.0
+size iterator = 3
+vertext count  	edge count
+42 	 235
+FordFulkerson Test	10.4
+PreflowPush test	8.1
+Scaling FordFulkerson test	2.6
+Maxflow of this graph is: 108.0
+size iterator = 4
+vertext count  	edge count
+52 	 349
+FordFulkerson Test	7.8
+PreflowPush test	15.3
+Scaling FordFulkerson test	4.4
+Maxflow of this graph is: 130.0
+size iterator = 5
+vertext count  	edge count
+62 	 509
+FordFulkerson Test	16
+PreflowPush test	1.2
+Scaling FordFulkerson test	7.1
+Maxflow of this graph is: 162.0
+size iterator = 6
+vertext count  	edge count
+72 	 691
+FordFulkerson Test	27.2
+PreflowPush test	73.2
+Scaling FordFulkerson test	11
+Maxflow of this graph is: 169.0
+size iterator = 7
+vertext count  	edge count
+82 	 907
+FordFulkerson Test	42.4
+PreflowPush test	140.6
+Scaling FordFulkerson test	19.9
+Maxflow of this graph is: 205.0
+size iterator = 8
+vertext count  	edge count
+92 	 1089
+FordFulkerson Test	87.9
+PreflowPush test	5.8
+Scaling FordFulkerson test	36.5
+Maxflow of this graph is: 248.0
+size iterator = 9
+vertext count  	edge count
+102 	 1342
+FordFulkerson Test	134.4
+PreflowPush test	234
+Scaling FordFulkerson test	76.5
+Maxflow of this graph is: 286.0
+size iterator = 10
+vertext count  	edge count
+112 	 1585
+FordFulkerson Test	178.3
+PreflowPush test	8.4
+Scaling FordFulkerson test	80.4
+Maxflow of this graph is: 279.0
+size iterator = 11
+vertext count  	edge count
+122 	 1927
+FordFulkerson Test	243.1
+PreflowPush test	8
+Scaling FordFulkerson test	119.8
+Maxflow of this graph is: 294.0
+size iterator = 12
+vertext count  	edge count
+132 	 2271
+FordFulkerson Test	482.7
+PreflowPush test	13.5
+Scaling FordFulkerson test	251.4
+Maxflow of this graph is: 343.0
+size iterator = 13
+vertext count  	edge count
+142 	 2555
+FordFulkerson Test	587.9
+PreflowPush test	1825.6
+Scaling FordFulkerson test	252.9
+Maxflow of this graph is: 351.0
+size iterator = 14
+vertext count  	edge count
+152 	 2953
+FordFulkerson Test	962.5
+PreflowPush test	2082.9
+Scaling FordFulkerson test	395.4
+Maxflow of this graph is: 426.0
+------------------------
+test on fixeddegree with different node count
+size iterator = 0
+vertext count  	edge count
+12 	 36
+FordFulkerson Test	0.3
+PreflowPush test	0.1
+Scaling FordFulkerson test	0.1
+Maxflow of this graph is: 20.0
+size iterator = 1
+vertext count  	edge count
+22 	 66
+FordFulkerson Test	0.3
+PreflowPush test	1.2
+Scaling FordFulkerson test	0.2
+Maxflow of this graph is: 17.0
+size iterator = 2
+vertext count  	edge count
+32 	 96
+FordFulkerson Test	0.7
+PreflowPush test	0.2
+Scaling FordFulkerson test	0.3
+Maxflow of this graph is: 15.0
+size iterator = 3
+vertext count  	edge count
+42 	 126
+FordFulkerson Test	0.5
+PreflowPush test	4.8
+Scaling FordFulkerson test	0.3
+Maxflow of this graph is: 20.0
+size iterator = 4
+vertext count  	edge count
+52 	 156
+FordFulkerson Test	0.8
+PreflowPush test	8.2
+Scaling FordFulkerson test	0.3
+Maxflow of this graph is: 8.0
+size iterator = 5
+vertext count  	edge count
+62 	 186
+FordFulkerson Test	0.6
+PreflowPush test	0.7
+Scaling FordFulkerson test	0.4
+Maxflow of this graph is: 16.0
+size iterator = 6
+vertext count  	edge count
+72 	 216
+FordFulkerson Test	0.5
+PreflowPush test	30.1
+Scaling FordFulkerson test	1
+Maxflow of this graph is: 5.0
+size iterator = 7
+vertext count  	edge count
+82 	 246
+FordFulkerson Test	1.7
+PreflowPush test	44.7
+Scaling FordFulkerson test	1.2
+Maxflow of this graph is: 14.0
+size iterator = 8
+vertext count  	edge count
+92 	 276
+FordFulkerson Test	0.9
+PreflowPush test	0.9
+Scaling FordFulkerson test	1
+Maxflow of this graph is: 12.0
+size iterator = 9
+vertext count  	edge count
+102 	 306
+FordFulkerson Test	2.4
+PreflowPush test	3.2
+Scaling FordFulkerson test	1.5
+Maxflow of this graph is: 21.0
+size iterator = 10
+vertext count  	edge count
+112 	 336
+FordFulkerson Test	1.5
+PreflowPush test	137.8
+Scaling FordFulkerson test	1.4
+Maxflow of this graph is: 3.0
+size iterator = 11
+vertext count  	edge count
+122 	 366
+FordFulkerson Test	2.3
+PreflowPush test	3.1
+Scaling FordFulkerson test	1.7
+Maxflow of this graph is: 13.0
+size iterator = 12
+vertext count  	edge count
+132 	 396
+FordFulkerson Test	2.1
+PreflowPush test	3.2
+Scaling FordFulkerson test	1.9
+Maxflow of this graph is: 8.0
+size iterator = 13
+vertext count  	edge count
+142 	 426
+FordFulkerson Test	3.7
+PreflowPush test	5.2
+Scaling FordFulkerson test	2.6
+Maxflow of this graph is: 21.0
+size iterator = 14
+vertext count  	edge count
+152 	 456
+FordFulkerson Test	3.9
+PreflowPush test	7.6
+Scaling FordFulkerson test	3.1
+Maxflow of this graph is: 15.0
+------------------------
+test on mesh with different node count
+size iterator = 0
+vertext count  	edge count
+3 	 2
+FordFulkerson Test	0
+PreflowPush test	0
+Scaling FordFulkerson test	0
+Maxflow of this graph is: 2.0
+size iterator = 1
+vertext count  	edge count
+6 	 10
+FordFulkerson Test	0
+PreflowPush test	0.1
+Scaling FordFulkerson test	0
+Maxflow of this graph is: 6.0
+size iterator = 2
+vertext count  	edge count
+11 	 24
+FordFulkerson Test	0.1
+PreflowPush test	0.1
+Scaling FordFulkerson test	0
+Maxflow of this graph is: 11.0
+size iterator = 3
+vertext count  	edge count
+18 	 44
+FordFulkerson Test	0.1
+PreflowPush test	0.3
+Scaling FordFulkerson test	0.1
+Maxflow of this graph is: 20.0
+size iterator = 4
+vertext count  	edge count
+27 	 70
+FordFulkerson Test	0.2
+PreflowPush test	0.5
+Scaling FordFulkerson test	0.5
+Maxflow of this graph is: 22.0
+size iterator = 5
+vertext count  	edge count
+38 	 102
+FordFulkerson Test	0.4
+PreflowPush test	2.5
+Scaling FordFulkerson test	0.2
+Maxflow of this graph is: 16.0
+size iterator = 6
+vertext count  	edge count
+51 	 140
+FordFulkerson Test	0.6
+PreflowPush test	4.6
+Scaling FordFulkerson test	0.5
+Maxflow of this graph is: 27.0
+size iterator = 7
+vertext count  	edge count
+66 	 184
+FordFulkerson Test	0.9
+PreflowPush test	12.1
+Scaling FordFulkerson test	0.9
+Maxflow of this graph is: 33.0
+size iterator = 8
+vertext count  	edge count
+83 	 234
+FordFulkerson Test	1.4
+PreflowPush test	3.9
+Scaling FordFulkerson test	1.5
+Maxflow of this graph is: 37.0
+size iterator = 9
+vertext count  	edge count
+102 	 290
+FordFulkerson Test	2.2
+PreflowPush test	27.8
+Scaling FordFulkerson test	2.9
+Maxflow of this graph is: 44.0
+size iterator = 10
+vertext count  	edge count
+123 	 352
+FordFulkerson Test	3.1
+PreflowPush test	148.4
+Scaling FordFulkerson test	3.5
+Maxflow of this graph is: 47.0
+size iterator = 11
+vertext count  	edge count
+146 	 420
+FordFulkerson Test	4.7
+PreflowPush test	280.1
+Scaling FordFulkerson test	4.5
+Maxflow of this graph is: 43.0
+size iterator = 12
+vertext count  	edge count
+171 	 494
+FordFulkerson Test	7.2
+PreflowPush test	603.2
+Scaling FordFulkerson test	7
+Maxflow of this graph is: 51.0
+size iterator = 13
+vertext count  	edge count
+198 	 574
+FordFulkerson Test	9.7
+PreflowPush test	115.8
+Scaling FordFulkerson test	10
+Maxflow of this graph is: 54.0
+size iterator = 14
+vertext count  	edge count
+227 	 660
+FordFulkerson Test	11
+PreflowPush test	1289.5
+Scaling FordFulkerson test	12.3
+Maxflow of this graph is: 50.0
+------------------------
+test on random with different node count
+size iterator = 0
+vertext count  	edge count
+11 	 20
+FordFulkerson Test	0
+PreflowPush test	0
+Scaling FordFulkerson test	0
+Maxflow of this graph is: 5.0
+size iterator = 1
+vertext count  	edge count
+21 	 80
+FordFulkerson Test	0.1
+PreflowPush test	0.1
+Scaling FordFulkerson test	0
+Maxflow of this graph is: 10.0
+size iterator = 2
+vertext count  	edge count
+31 	 162
+FordFulkerson Test	0.7
+PreflowPush test	0.2
+Scaling FordFulkerson test	0.3
+Maxflow of this graph is: 36.0
+size iterator = 3
+vertext count  	edge count
+41 	 271
+FordFulkerson Test	1
+PreflowPush test	5.1
+Scaling FordFulkerson test	0.6
+Maxflow of this graph is: 40.0
+size iterator = 4
+vertext count  	edge count
+51 	 469
+FordFulkerson Test	5.5
+PreflowPush test	0.7
+Scaling FordFulkerson test	2.2
+Maxflow of this graph is: 55.0
+size iterator = 5
+vertext count  	edge count
+61 	 700
+FordFulkerson Test	11.8
+PreflowPush test	28.8
+Scaling FordFulkerson test	5.2
+Maxflow of this graph is: 63.0
+size iterator = 6
+vertext count  	edge count
+71 	 997
+FordFulkerson Test	13.7
+PreflowPush test	57
+Scaling FordFulkerson test	8.3
+Maxflow of this graph is: 51.0
+size iterator = 7
+vertext count  	edge count
+81 	 1248
+FordFulkerson Test	34.9
+PreflowPush test	2.5
+Scaling FordFulkerson test	24.2
+Maxflow of this graph is: 64.0
+size iterator = 8
+vertext count  	edge count
+91 	 1610
+FordFulkerson Test	74.2
+PreflowPush test	155.8
+Scaling FordFulkerson test	41.3
+Maxflow of this graph is: 96.0
+size iterator = 9
+vertext count  	edge count
+101 	 1923
+FordFulkerson Test	85
+PreflowPush test	5.1
+Scaling FordFulkerson test	41.6
+Maxflow of this graph is: 74.0
+size iterator = 10
+vertext count  	edge count
+111 	 2338
+FordFulkerson Test	185.4
+PreflowPush test	7.9
+Scaling FordFulkerson test	90.4
+Maxflow of this graph is: 115.0
+size iterator = 11
+vertext count  	edge count
+121 	 2789
+FordFulkerson Test	173.7
+PreflowPush test	7.5
+Scaling FordFulkerson test	85.2
+Maxflow of this graph is: 72.0
+size iterator = 12
+vertext count  	edge count
+131 	 3301
+FordFulkerson Test	400.5
+PreflowPush test	835.5
+Scaling FordFulkerson test	180.8
+Maxflow of this graph is: 144.0
+size iterator = 13
+vertext count  	edge count
+141 	 3909
+FordFulkerson Test	404.3
+PreflowPush test	1178.3
+Scaling FordFulkerson test	227.9
+Maxflow of this graph is: 112.0
+size iterator = 14
+vertext count  	edge count
+151 	 4357
+FordFulkerson Test	674.1
+PreflowPush test	1637.9
+Scaling FordFulkerson test	387.7
+Maxflow of this graph is: 162.0
+
