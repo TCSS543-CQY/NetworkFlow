@@ -26,7 +26,7 @@ public class PerformanceTest {
 
 	public static Utils ut;
 	public static graphGenerator gg;
-	private static int SIZE = 3;
+	private static int SIZE = 10;
 
 	public static void main(String[] args) throws Exception {
 
@@ -120,9 +120,9 @@ public class PerformanceTest {
 		// writing results for a test of running time on different vertex count
 		String fileName1 = "vertex_range_result.txt";
 		// writing results for a test of running time on different parameter
-		String fileName2 = "parameter_range_result.txt";
+		String fileName2 = "capacity_range_result.txt";
 		String vertexrange_result = "";
-		String pararange_result = "";
+		String caprange_result = "";
 		System.out.println("---------------------------------------------------\n");
 
 		// test three algorithms on graphs, change vertex count
@@ -213,92 +213,92 @@ public class PerformanceTest {
 
 		
 		
-		// test three algorithms on graphs, change parameter
+		// test three algorithms on graphs, change capacities
 		System.out.print("*****************************************"+"\n");
-		System.out.print("test on bipartite with different probablities "+"\n");
-		pararange_result = pararange_result + "------------------------"+"\n";
-		pararange_result = pararange_result+"test on bipartite with different probablities" + "\n";
+		System.out.print("test on bipartite with different max capacities "+"\n");
+		caprange_result = caprange_result + "------------------------"+"\n";
+		caprange_result = caprange_result+"test on bipartite with different max capacities" + "\n";
 	
-		SimpleGraph[] bipartiteG_arr2 = graphGenerator.ParameterRange(SIZE, "bipartite");
+		SimpleGraph[] bipartiteG_arr2 = graphGenerator.CapacityRange(SIZE, "bipartite");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print("size iterator = "+i+"\n");
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
 			System.out.println(bipartiteG_arr2[i].numVertices() + " \t " + bipartiteG_arr2[i].numEdges());
-			pararange_result = pararange_result+"size iterator = "+i+"\n";
-			pararange_result = pararange_result +"vertext count"+"  \t" +"edge count"+"\n";
-			pararange_result = pararange_result+bipartiteG_arr2[i].numVertices() + " \t " + bipartiteG_arr2[i].numEdges();
-			pararange_result = pararange_result+"\n";
+			caprange_result = caprange_result+"size iterator = "+i+"\n";
+			caprange_result = caprange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			caprange_result = caprange_result+bipartiteG_arr2[i].numVertices() + " \t " + bipartiteG_arr2[i].numEdges();
+			caprange_result = caprange_result+"\n";
 			String tmp_rlt = runAlgorithms(bipartiteG_arr2[i]);
 			//System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
 			System.out.println("------------------------------------");
-			pararange_result = pararange_result + tmp_rlt;
+			caprange_result = caprange_result + tmp_rlt;
 
 		}
 
 		System.out.print("*****************************************"+"\n");
-		System.out.print("test on fixeddegree with different degrees "+"\n");
-		pararange_result = pararange_result + "------------------------"+"\n";
-		pararange_result = pararange_result+"test on fixeddegree with different degrees " + "\n";
+		System.out.print("test on fixeddegree with different max capacities "+"\n");
+		caprange_result = caprange_result + "------------------------"+"\n";
+		caprange_result = caprange_result+"test on fixeddegree with different max capacities " + "\n";
 	
-		SimpleGraph[] fixdegree_arr2 = graphGenerator.VertexRange(SIZE, "fixeddegree");
+		SimpleGraph[] fixdegree_arr2 = graphGenerator.CapacityRange(SIZE, "fixeddegree");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print("size iterator = "+i+"\n");
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
 			System.out.println(fixdegree_arr2[i].numVertices() + " \t " + fixdegree_arr2[i].numEdges());
-			pararange_result = pararange_result+"size iterator = "+i+"\n";
-			pararange_result = pararange_result +"vertext count"+"  \t" +"edge count"+"\n";
-			pararange_result = pararange_result+fixdegree_arr2[i].numVertices() + " \t " + fixdegree_arr2[i].numEdges();
-			pararange_result = pararange_result+"\n";
+			caprange_result = caprange_result+"size iterator = "+i+"\n";
+			caprange_result = caprange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			caprange_result = caprange_result+fixdegree_arr2[i].numVertices() + " \t " + fixdegree_arr2[i].numEdges();
+			caprange_result = caprange_result+"\n";
 			
 			String tmp_rlt = runAlgorithms(fixdegree_arr[i]);
 			//System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
 			System.out.println("------------------------------------");
-			pararange_result = pararange_result + tmp_rlt;
+			caprange_result = caprange_result + tmp_rlt;
 
 		}
 
 		System.out.print("*****************************************"+"\n");
 		System.out.print("test on mesh with different capacities "+"\n");
-		pararange_result = pararange_result + "------------------------"+"\n";
-		pararange_result = pararange_result+"test on mesh with different capacities" + "\n";
+		caprange_result = caprange_result + "------------------------"+"\n";
+		caprange_result = caprange_result+"test on mesh with different capacities" + "\n";
 	
-		SimpleGraph[] mesh_arr2 = graphGenerator.VertexRange(SIZE, "mesh");
+		SimpleGraph[] mesh_arr2 = graphGenerator.CapacityRange(SIZE, "mesh");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print("size iterator = "+i+"\n");
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
 			System.out.println(mesh_arr2[i].numVertices() + " \t " + mesh_arr2[i].numEdges());
-			pararange_result = pararange_result+"size iterator = "+i+"\n";
-			pararange_result = pararange_result +"vertext count"+"  \t" +"edge count"+"\n";
-			pararange_result = pararange_result+mesh_arr2[i].numVertices() + " \t " + mesh_arr2[i].numEdges();
-			pararange_result = pararange_result+"\n";
+			caprange_result = caprange_result+"size iterator = "+i+"\n";
+			caprange_result = caprange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			caprange_result = caprange_result+mesh_arr2[i].numVertices() + " \t " + mesh_arr2[i].numEdges();
+			caprange_result = caprange_result+"\n";
 			String tmp_rlt = runAlgorithms(mesh_arr[i]);
 			//System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
 			System.out.println("------------------------------------");
-			pararange_result = pararange_result + tmp_rlt;
+			caprange_result = caprange_result + tmp_rlt;
 
 		}
 		
 		System.out.print("*****************************************"+"\n");
-		System.out.print("test on random with different denses "+"\n");
-		pararange_result = pararange_result + "------------------------"+"\n";
-		pararange_result = pararange_result+"test on random with different denses" + "\n";
+		System.out.print("test on random with different max capacities "+"\n");
+		caprange_result = caprange_result + "------------------------"+"\n";
+		caprange_result = caprange_result+"test on random with different max capacities" + "\n";
 	
-		SimpleGraph[] random_arr2 = graphGenerator.VertexRange(SIZE, "random");
+		SimpleGraph[] random_arr2 = graphGenerator.CapacityRange(SIZE, "random");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print("vertext count"+"  \t" +"edge count"+"\n");
 			System.out.println(random_arr2[i].numVertices() + " \t " + random_arr2[i].numEdges());
-			pararange_result = pararange_result+"size iterator = "+i+"\n";
-			pararange_result = pararange_result +"vertext count"+"  \t" +"edge count"+"\n";
-			pararange_result = pararange_result+random_arr2[i].numVertices() + " \t " + random_arr2[i].numEdges();
-			pararange_result = pararange_result+"\n";
+			caprange_result = caprange_result+"size iterator = "+i+"\n";
+			caprange_result = caprange_result +"vertext count"+"  \t" +"edge count"+"\n";
+			caprange_result = caprange_result+random_arr2[i].numVertices() + " \t " + random_arr2[i].numEdges();
+			caprange_result = caprange_result+"\n";
 			String tmp_rlt = runAlgorithms(random_arr[i]);
 			System.out.print("size iterator = "+i+"\n");
 			System.out.println(tmp_rlt);
 			System.out.println("------------------------------------");
-			pararange_result = pararange_result + tmp_rlt;
+			caprange_result = caprange_result + tmp_rlt;
 
 		}
 
@@ -311,7 +311,7 @@ public class PerformanceTest {
 		}
 
 		try (PrintWriter out = new PrintWriter(fileName2)) {
-			out.println(pararange_result);
+			out.println(caprange_result);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
