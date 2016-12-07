@@ -51,7 +51,7 @@ public class PerformanceTest {
 		System.out.println("result for running all algorithem 10 times given an input file: ");
 		//System.out.println("------------------------------------");
 
-		// Ford-Fulkerson
+		// FordFulkerson
 		double FFMaxflow = 0;
 		for (int i = 0; i < 10; i++) {
 			startTime = System.currentTimeMillis();
@@ -64,7 +64,7 @@ public class PerformanceTest {
 		results = "FordFulkerson Test" + "\t" + ut.getAverageRunTime(runtimeArray);
 		results = results + "\n";
 
-		// Run Preflow Push
+		// Run PreflowPush
 		double preFlowMaxflow = 0;
 		for (int i = 0; i < 10; i++) {
 	
@@ -79,7 +79,7 @@ public class PerformanceTest {
 		results = results+"PreflowPush test" + "\t" + ut.getAverageRunTime(runtimeArray);
 		results = results + "\n";
 		
-		// Run scaling Ford-Fulkerson
+		// Run scaling FordFulkerson
 		 double SFFMaxflow = 0.0;
 		 for(int i = 0;i<10;i++){
 			 startTime = System.currentTimeMillis();
@@ -117,8 +117,9 @@ public class PerformanceTest {
 		long[] runtimeArray = new long[10];
 		long startTime = 0;
 		String directory = System.getProperty("user.dir");
-
+		// writing results for a test of running time on different vertex count
 		String fileName1 = "vertex_range_result.txt";
+		// writing results for a test of running time on different parameter
 		String fileName2 = "parameter_range_result.txt";
 		String vertexrange_result = "";
 		String pararange_result = "";

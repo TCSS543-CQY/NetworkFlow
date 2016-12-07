@@ -23,24 +23,23 @@ public class graphGenerator {
 	// for fixed degree, degree means the number of edges out of each node
 	private static int DEGREE = 2;
 	private static double MAX_PROBABILITY = 1;
-	
-	
-	
+
 	/**
-	 * generate a range of graphs with different choices of parameters:
-	 * degrees, MAX_PROBABILITY, capacities
+	 * generate a range of graphs with different choices of parameters: degrees,
+	 * MAX_PROBABILITY, capacities
+	 * 
 	 * @param size
 	 * @param type
 	 * @return
-	 * @throws Exception 
+	 * @throws Exception
 	 */
-	public static SimpleGraph[] ParameterRange(int size, String type) throws Exception{
+	public static SimpleGraph[] ParameterRange(int size, String type) throws Exception {
 		SimpleGraph[] graphArray = new SimpleGraph[size];
 		GraphInput graphInput = new GraphInput();
-		if (size ==0){
+		if (size == 0) {
 			throw new IllegalArgumentException("graph array size cannot be zero");
 		}
-		
+
 		switch (type.toLowerCase()) {
 		// use a range of MAX_PROBABILITY to generate bipartite
 		case "bipartite":
@@ -48,7 +47,7 @@ public class graphGenerator {
 				// create a new simpleGraph class for bipartite
 				SimpleGraph bipartite = new SimpleGraph();
 				BipartiteGraph bg = new BipartiteGraph();
-				double probability = (1/size)*i;
+				double probability = (1 / size) * i;
 				// generate bipartite and write to a file
 				bg.graphGenerator(S_NODE_COUNT, T_NODE_COUNT, MIN_CAPACITY, MAX_CAPACITY, probability, FILENAME);
 				// load from file the bipartite to a SimpleGraph instance
@@ -62,7 +61,7 @@ public class graphGenerator {
 				SimpleGraph fix = new SimpleGraph();
 				FixedDegreeGraph fdg = new FixedDegreeGraph();
 				int degree = size;
-				fdg.graphGenerator(S_NODE_COUNT*2, degree, MIN_CAPACITY, MAX_CAPACITY, FILENAME);
+				fdg.graphGenerator(S_NODE_COUNT * 2, degree, MIN_CAPACITY, MAX_CAPACITY, FILENAME);
 				graphInput.LoadSimpleGraph(fix, FILENAME);
 				graphArray[i - 1] = fix;
 			}
@@ -86,8 +85,8 @@ public class graphGenerator {
 			for (int i = 1; i <= size; i++) {
 				SimpleGraph random = new SimpleGraph();
 				RandomGraph rg = new RandomGraph();
-				double probability = (1/size)*i;
-				rg.BuildGraph(FILENAME, ".", S_NODE_COUNT*2, (int) (probability * 100), MIN_CAPACITY, MAX_CAPACITY);
+				double probability = (1 / size) * i;
+				rg.BuildGraph(FILENAME, ".", S_NODE_COUNT * 2, (int) (probability * 100), MIN_CAPACITY, MAX_CAPACITY);
 				graphInput.LoadSimpleGraph(random, FILENAME);
 				graphArray[i - 1] = random;
 
@@ -99,20 +98,16 @@ public class graphGenerator {
 			break;
 		}
 		return graphArray;
-		
+
 	}
-	
-	
+
 	/**
-	 * generate a range of graphs with different number of vertices
-	 * here we use a the size in proportion to the number of graphs to 
-	 * be generated: node_count = 5 * size. We use in our main method,
-	 * size = 10 to test.
+	 * generate a range of graphs with different number of vertices here we use
+	 * a the size in proportion to the number of graphs to be generated:
+	 * node_count = 5 * size. We use in our main method, size = 10 to test.
 	 * 
-	 * @param size
-	 *            - number of graphs to be generated
-	 * @param type
-	 *            - graph type
+	 * @param size: count of graphs to be generated
+	 * @param type: graph type
 	 * @return
 	 * @throws Exception
 	 */
@@ -180,25 +175,21 @@ public class graphGenerator {
 		return graphArray;
 	}
 
-	// test with bipartite graph
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// RandomGenerator rg = new RandomGenerator();
-		// rg.BuildGraph("lowDensity.txt", ".", 100, 5, 1, 50);
+	// test 
+//	public static void main(String[] args) {
+//	
+//		String[] arguments = { String.valueOf(S_NODE_COUNT), String.valueOf(T_NODE_COUNT), String.valueOf(MAX_CAPACITY),
+//				FILENAME };
+//		MeshGenerator MG = new MeshGenerator(arguments);
+//		try {
+//			MG.generate();
+//
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			System.out.print("error generating graph");
+//		}
 
-		// BipartiteGraph BG = new BipartiteGraph();
-		String[] arguments = { String.valueOf(S_NODE_COUNT), String.valueOf(T_NODE_COUNT), String.valueOf(MAX_CAPACITY),
-				FILENAME };
-		MeshGenerator MG = new MeshGenerator(arguments);
-		try {
-			MG.generate();
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.print("error generating graph");
-		}
-
-	}
+//	}
 
 }
