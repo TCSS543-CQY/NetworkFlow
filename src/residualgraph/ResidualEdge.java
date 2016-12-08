@@ -35,15 +35,6 @@ public class ResidualEdge {
         return capacity;
     }
 
-    public void setFlow(double flow)
-    {
-        this.flow = flow;
-    }
-
-    public double getFlow()
-    {
-        return flow;
-    }
     public ResidualVertex getEdgeEnd()
     {
         return v;
@@ -53,24 +44,4 @@ public class ResidualEdge {
         return u;
     }
 
-    /**
-     * check if the edge is filled
-     * @return true if edge is filled
-     */
-    public boolean ifFilled()
-    {
-        if (capacity == flow) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * check how much capacity room left of the edge
-     * @return
-     */
-    public double capacityLeft() {
-        return getCapacity() - getFlow();
-    }
 }

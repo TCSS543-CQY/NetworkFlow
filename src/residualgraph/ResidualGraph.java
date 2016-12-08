@@ -76,40 +76,6 @@ public class ResidualGraph {
         vertexList.addLast(v);
     }
 
-    /**
-     * Given a vertex and an edge, if the vertex is one of the endpoints
-     * of the edge, return the other endpoint of the edge.
-     * @param v  vertex
-     * @param e  edge
-     */
-    public ResidualVertex opposite(ResidualVertex v, ResidualEdge e)
-    {
-        ResidualVertex w;
-
-        if (e.getEdgeEnd() == v) {
-            w = e.getOtherEnd();
-        }
-        else if (e.getOtherEnd() == v) {
-            w = e.getEdgeEnd();
-        }
-        else
-            w = null;
-
-        return w;
-    }
-
-
-    public int numVertices()
-    {
-        return vertexList.size();
-    }
-
-
-    public int numEdges()
-    {
-        return edgeList.size();
-    }
-
 
 
     /**
